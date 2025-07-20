@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taskido</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <div id="container">
+    
+    <header id="hd">
+      <img id="header-banner" src="images/to do list.png" alt="Header Banner" />
+      <button id="dark-mode-toggle">🌙</button>
+    </header>
+
+    <main id="mn">
+      <section id="mn__sect01">
+        <input type="text" id="task-input" placeholder="Add a new task" />
+        <button id="add-task-btn">Add Task</button>
+        <p id="error-msg" class="error-msg hidden">Please enter a task!</p>
+      </section>
+
+      <section id="mn__sect02">
+        <h2>Tasks</h2>
+        <ol id="task-list"></ol>
+      </section>
+    </main>
+
+    <footer id="ft">
+      <p>© 2025 Taskido App</p>
+      <p>All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>

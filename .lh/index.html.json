@@ -1,0 +1,110 @@
+{
+    "sourceFile": "index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 23,
+            "patches": [
+                {
+                    "date": 1753044549660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1753046481040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,51 +1,37 @@\n <!DOCTYPE html>\r\n <html lang=\"en\">\r\n <head>\r\n-  <meta charset=\"UTF-8\" />\r\n-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n-  <title>Taskido - To Do List</title>\r\n-  <link rel=\"stylesheet\" href=\"./css/styles.css\" />\r\n+    <meta charset=\"UTF-8\">\r\n+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n+    <title>Taskido - Task Manager</title>\r\n+    <link rel=\"stylesheet\" href=\"./css/styles.css\">\r\n </head>\r\n <body>\r\n-  <div id=\"container\">\r\n-    \r\n-    <!-- Header Section -->\r\n-    <header id=\"header\">\r\n-      <img id=\"logo\" src=\"./images/logo-trans.png\" alt=\"Taskido Logo\" />\r\n-    </header>\r\n+    <div id=\"container\">\r\n+        <header id=\"hd\">\r\n+            <img id=\"logo\" src=\"./images/logo-trans.png\" alt=\"App Logo\">\r\n+        </header>\r\n \r\n-    <!-- Main Content -->\r\n-    <main id=\"main-content\">\r\n+        <main id=\"mn\">\r\n+            <section class=\"mn__sect\" id=\"mn__sect01\">\r\n+                <input type=\"text\" id=\"task-input\" placeholder=\"Add a new task\">\r\n+                <button id=\"add-task-btn\">Add Task</button>\r\n+            </section>\r\n \r\n-      <!-- Task Input Section -->\r\n-      <section class=\"task-section\" id=\"task-input-section\">\r\n-        <input \r\n-          type=\"text\" \r\n-          id=\"task-input\" \r\n-          name=\"task\" \r\n-          placeholder=\"Add a new task\" \r\n-        />\r\n-        <button id=\"add-task-btn\">Add Task</button>\r\n-      </section>\r\n+            <section class=\"mn__sect\" id=\"mn__sect02\">\r\n+                <h2>Tasks</h2>\r\n+                <ol id=\"task-list\">\r\n+                    <!-- Tasks will be added here dynamically -->\r\n+                </ol>\r\n+            </section>\r\n+        </main>\r\n \r\n-      <!-- Task List Section -->\r\n-      <section class=\"task-section\" id=\"task-list-section\">\r\n-        <h2>Your Tasks</h2>\r\n-        <ol id=\"task-list\">\r\n-          <!-- Dynamic tasks will be inserted here -->\r\n-        </ol>\r\n-      </section>\r\n+        <footer id=\"ft\">\r\n+            <p>© 2025 Taskido App</p>\r\n+            <p>All rights reserved.</p>\r\n+        </footer>\r\n+    </div>\r\n \r\n-    </main>\r\n-\r\n-    <!-- Footer Section -->\r\n-    <footer id=\"footer\">\r\n-      <p>© 2025 Taskido App</p>\r\n-      <p>All rights reserved.</p>\r\n-    </footer>\r\n-    \r\n-  </div>\r\n-\r\n-  <script src=\"./js/app.js\"></script>\r\n+    <script src=\"./js/app.js\"></script>\r\n </body>\r\n </html>\r\n"
+                },
+                {
+                    "date": 1753046535158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n </head>\r\n <body>\r\n     <div id=\"container\">\r\n         <header id=\"hd\">\r\n-            <img id=\"logo\" src=\"./images/logo-trans.png\" alt=\"App Logo\">\r\n+            <img id=\"logo\" src=\"images/l.webp\" alt=\"App Logo\">\r\n         </header>\r\n \r\n         <main id=\"mn\">\r\n             <section class=\"mn__sect\" id=\"mn__sect01\">\r\n"
+                },
+                {
+                    "date": 1753046935673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n <head>\r\n     <meta charset=\"UTF-8\">\r\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n     <title>Taskido - Task Manager</title>\r\n-    <link rel=\"stylesheet\" href=\"./css/styles.css\">\r\n+    <link rel=\"stylesheet\" href=\"css/styles.css\">\r\n </head>\r\n <body>\r\n     <div id=\"container\">\r\n         <header id=\"hd\">\r\n"
+                },
+                {
+                    "date": 1753048393011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,37 +1,37 @@\n <!DOCTYPE html>\r\n <html lang=\"en\">\r\n <head>\r\n-    <meta charset=\"UTF-8\">\r\n-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n-    <title>Taskido - Task Manager</title>\r\n-    <link rel=\"stylesheet\" href=\"css/styles.css\">\r\n+  <meta charset=\"UTF-8\" />\r\n+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n+  <title>Taskido - Task Manager</title>\r\n+  <link rel=\"stylesheet\" href=\"./css/styles.css\" />\r\n </head>\r\n <body>\r\n-    <div id=\"container\">\r\n-        <header id=\"hd\">\r\n-            <img id=\"logo\" src=\"images/l.webp\" alt=\"App Logo\">\r\n-        </header>\r\n+  <div id=\"container\">\r\n+    <header id=\"hd\">\r\n+      <img id=\"logo\" src=\"./images/logo-trans.png\" alt=\"App Logo\" />\r\n+      <button id=\"dark-mode-toggle\" aria-label=\"Toggle Dark Mode\">🌙</button>\r\n+    </header>\r\n \r\n-        <main id=\"mn\">\r\n-            <section class=\"mn__sect\" id=\"mn__sect01\">\r\n-                <input type=\"text\" id=\"task-input\" placeholder=\"Add a new task\">\r\n-                <button id=\"add-task-btn\">Add Task</button>\r\n-            </section>\r\n+    <main id=\"mn\">\r\n+      <section class=\"mn__sect\" id=\"mn__sect01\">\r\n+        <input type=\"text\" id=\"task-input\" placeholder=\"Add a new task\" />\r\n+        <button id=\"add-task-btn\">Add Task</button>\r\n+        <p id=\"error-msg\" class=\"error-msg hidden\">Please enter a task!</p>\r\n+      </section>\r\n \r\n-            <section class=\"mn__sect\" id=\"mn__sect02\">\r\n-                <h2>Tasks</h2>\r\n-                <ol id=\"task-list\">\r\n-                    <!-- Tasks will be added here dynamically -->\r\n-                </ol>\r\n-            </section>\r\n-        </main>\r\n+      <section class=\"mn__sect\" id=\"mn__sect02\">\r\n+        <h2>Tasks</h2>\r\n+        <ol id=\"task-list\"></ol>\r\n+      </section>\r\n+    </main>\r\n \r\n-        <footer id=\"ft\">\r\n-            <p>© 2025 Taskido App</p>\r\n-            <p>All rights reserved.</p>\r\n-        </footer>\r\n-    </div>\r\n+    <footer id=\"ft\">\r\n+      <p>© 2025 Taskido App</p>\r\n+      <p>All rights reserved.</p>\r\n+    </footer>\r\n+  </div>\r\n \r\n-    <script src=\"./js/app.js\"></script>\r\n+  <script src=\"./js/app.js\"></script>\r\n </body>\r\n </html>\r\n"
+                },
+                {
+                    "date": 1753048906663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <!DOCTYPE html>\r\n <html lang=\"en\">\r\n <head>\r\n   <meta charset=\"UTF-8\" />\r\n-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n   <title>Taskido - Task Manager</title>\r\n   <link rel=\"stylesheet\" href=\"./css/styles.css\" />\r\n </head>\r\n <body>\r\n"
+                },
+                {
+                    "date": 1753049321866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,27 +1,27 @@\n <!DOCTYPE html>\r\n <html lang=\"en\">\r\n <head>\r\n   <meta charset=\"UTF-8\" />\r\n-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n-  <title>Taskido - Task Manager</title>\r\n+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\r\n+  <title>Taskido</title>\r\n   <link rel=\"stylesheet\" href=\"./css/styles.css\" />\r\n </head>\r\n <body>\r\n   <div id=\"container\">\r\n     <header id=\"hd\">\r\n       <img id=\"logo\" src=\"./images/logo-trans.png\" alt=\"App Logo\" />\r\n-      <button id=\"dark-mode-toggle\" aria-label=\"Toggle Dark Mode\">🌙</button>\r\n+      <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n-      <section class=\"mn__sect\" id=\"mn__sect01\">\r\n+      <section id=\"mn__sect01\">\r\n         <input type=\"text\" id=\"task-input\" placeholder=\"Add a new task\" />\r\n         <button id=\"add-task-btn\">Add Task</button>\r\n         <p id=\"error-msg\" class=\"error-msg hidden\">Please enter a task!</p>\r\n       </section>\r\n \r\n-      <section class=\"mn__sect\" id=\"mn__sect02\">\r\n+      <section id=\"mn__sect02\">\r\n         <h2>Tasks</h2>\r\n         <ol id=\"task-list\"></ol>\r\n       </section>\r\n     </main>\r\n"
+                },
+                {
+                    "date": 1753050123940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n </head>\r\n <body>\r\n   <div id=\"container\">\r\n     <header id=\"hd\">\r\n-      <img id=\"logo\" src=\"./images/logo-trans.png\" alt=\"App Logo\" />\r\n+      <img id=\"logo\" src=\"images/to do list.png\" alt=\"App Logo\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                },
+                {
+                    "date": 1753051017441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n </head>\r\n <body>\r\n   <div id=\"container\">\r\n     <header id=\"hd\">\r\n-      <img id=\"logo\" src=\"images/to do list.png\" alt=\"App Logo\" />\r\n+      <img id=\"logo\" src=\"images/l.webp\" alt=\"App Logo\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                },
+                {
+                    "date": 1753051467593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n </head>\r\n <body>\r\n   <div id=\"container\">\r\n     <header id=\"hd\">\r\n-      <img id=\"logo\" src=\"images/l.webp\" alt=\"App Logo\" />\r\n+      <img id=\"logo\" src=\"images/to do list.png\" alt=\"App Logo\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                },
+                {
+                    "date": 1753052023556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n </head>\r\n <body>\r\n   <div id=\"container\">\r\n     <header id=\"hd\">\r\n-      <img id=\"logo\" src=\"images/to do list.png\" alt=\"App Logo\" />\r\n+      <img id=\"logo\" src=\"images/logo-trans.png\" alt=\"App Logo\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                },
+                {
+                    "date": 1753052319805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,11 @@\n   <link rel=\"stylesheet\" href=\"./css/styles.css\" />\r\n </head>\r\n <body>\r\n   <div id=\"container\">\r\n+    \r\n     <header id=\"hd\">\r\n-      <img id=\"logo\" src=\"images/logo-trans.png\" alt=\"App Logo\" />\r\n+      <img id=\"header-banner\" src=\"images/logo-trans.png\" alt=\"Header Banner\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n@@ -29,8 +30,9 @@\n     <footer id=\"ft\">\r\n       <p>© 2025 Taskido App</p>\r\n       <p>All rights reserved.</p>\r\n     </footer>\r\n+\r\n   </div>\r\n \r\n   <script src=\"./js/app.js\"></script>\r\n </body>\r\n"
+                },
+                {
+                    "date": 1753052371265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\r\n   <div id=\"container\">\r\n     \r\n     <header id=\"hd\">\r\n-      <img id=\"header-banner\" src=\"images/logo-trans.png\" alt=\"Header Banner\" />\r\n+      <img id=\"header-banner\" src=\"images/to do list.png\" alt=\"Header Banner\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                },
+                {
+                    "date": 1753052411259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\r\n   <div id=\"container\">\r\n     \r\n     <header id=\"hd\">\r\n-      <img id=\"header-banner\" src=\"images/to do list.png\" alt=\"Header Banner\" />\r\n+      <img id=\"header-banner\" src=\"images/l.webp\" alt=\"Header Banner\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                },
+                {
+                    "date": 1753052647518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\r\n   <div id=\"container\">\r\n     \r\n     <header id=\"hd\">\r\n-      <img id=\"header-banner\" src=\"images/l.webp\" alt=\"Header Banner\" />\r\n+      <img id=\"header-banner\" src=\"images/tt.webp alt=\"Header Banner\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                },
+                {
+                    "date": 1753052672070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\r\n   <div id=\"container\">\r\n     \r\n     <header id=\"hd\">\r\n-      <img id=\"header-banner\" src=\"images/tt.webp alt=\"Header Banner\" />\r\n+      <img id=\"header-banner\" src=\"images/tt.webp\" alt=\"Header Banner\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                },
+                {
+                    "date": 1753052715332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\r\n   <div id=\"container\">\r\n     \r\n     <header id=\"hd\">\r\n-      <img id=\"header-banner\" src=\"images/tt.webp\" alt=\"Header Banner\" />\r\n+      <img id=\"header-banner\" src=\"images/logo-trans.png\" alt=\"Header Banner\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                },
+                {
+                    "date": 1753052950373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\r\n   <div id=\"container\">\r\n     \r\n     <header id=\"hd\">\r\n-      <img id=\"header-banner\" src=\"images/logo-trans.png\" alt=\"Header Banner\" />\r\n+      <img id=\"header-banner\" src=\"images/to do list.png\" alt=\"Header Banner\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                },
+                {
+                    "date": 1753052994191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\r\n   <div id=\"container\">\r\n     \r\n     <header id=\"hd\">\r\n-      <img id=\"header-banner\" src=\"images/to do list.png\" alt=\"Header Banner\" />\r\n+      <img id=\"header-banner\" src=\"images/tt.webp\" alt=\"Header Banner\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                },
+                {
+                    "date": 1753053061613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\r\n   <div id=\"container\">\r\n     \r\n     <header id=\"hd\">\r\n-      <img id=\"header-banner\" src=\"images/tt.webp\" alt=\"Header Banner\" />\r\n+      <img id=\"header-banner\" src=\"images/l.webp\" alt=\"Header Banner\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                },
+                {
+                    "date": 1753053092900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\r\n   <div id=\"container\">\r\n     \r\n     <header id=\"hd\">\r\n-      <img id=\"header-banner\" src=\"images/l.webp\" alt=\"Header Banner\" />\r\n+      <img id=\"header-banner\" src=\"images/logo-trans.png\" alt=\"Header Banner\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                },
+                {
+                    "date": 1753053152974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\r\n   <div id=\"container\">\r\n     \r\n     <header id=\"hd\">\r\n-      <img id=\"header-banner\" src=\"images/logo-trans.png\" alt=\"Header Banner\" />\r\n+      <img id=\"header-banner\" src=\"images/to do list.png\" alt=\"Header Banner\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                },
+                {
+                    "date": 1753053314864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\r\n   <div id=\"container\">\r\n     \r\n     <header id=\"hd\">\r\n-      <img id=\"header-banner\" src=\"images/to do list.png\" alt=\"Header Banner\" />\r\n+      <img id=\"header-banner\" src=\"images/logo-trans.png\" alt=\"Header Banner\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                },
+                {
+                    "date": 1753053346601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\r\n   <div id=\"container\">\r\n     \r\n     <header id=\"hd\">\r\n-      <img id=\"header-banner\" src=\"images/logo-trans.png\" alt=\"Header Banner\" />\r\n+      <img id=\"header-banner\" src=\"images/to do list.png\" alt=\"Header Banner\" />\r\n       <button id=\"dark-mode-toggle\">🌙</button>\r\n     </header>\r\n \r\n     <main id=\"mn\">\r\n"
+                }
+            ],
+            "date": 1753044549660,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\" />\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n  <title>Taskido - To Do List</title>\r\n  <link rel=\"stylesheet\" href=\"./css/styles.css\" />\r\n</head>\r\n<body>\r\n  <div id=\"container\">\r\n    \r\n    <!-- Header Section -->\r\n    <header id=\"header\">\r\n      <img id=\"logo\" src=\"./images/logo-trans.png\" alt=\"Taskido Logo\" />\r\n    </header>\r\n\r\n    <!-- Main Content -->\r\n    <main id=\"main-content\">\r\n\r\n      <!-- Task Input Section -->\r\n      <section class=\"task-section\" id=\"task-input-section\">\r\n        <input \r\n          type=\"text\" \r\n          id=\"task-input\" \r\n          name=\"task\" \r\n          placeholder=\"Add a new task\" \r\n        />\r\n        <button id=\"add-task-btn\">Add Task</button>\r\n      </section>\r\n\r\n      <!-- Task List Section -->\r\n      <section class=\"task-section\" id=\"task-list-section\">\r\n        <h2>Your Tasks</h2>\r\n        <ol id=\"task-list\">\r\n          <!-- Dynamic tasks will be inserted here -->\r\n        </ol>\r\n      </section>\r\n\r\n    </main>\r\n\r\n    <!-- Footer Section -->\r\n    <footer id=\"footer\">\r\n      <p>© 2025 Taskido App</p>\r\n      <p>All rights reserved.</p>\r\n    </footer>\r\n    \r\n  </div>\r\n\r\n  <script src=\"./js/app.js\"></script>\r\n</body>\r\n</html>\r\n"
+        }
+    ]
+}
