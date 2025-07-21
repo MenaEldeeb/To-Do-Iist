@@ -7,12 +7,12 @@ const container = document.getElementById('container');
 
 let tasks = [];
 
-// حفظ المهام في localStorage
+// Save tasks to localStorage
 function saveTasks() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// تحميل المهام من localStorage
+// Load tasks from localStorage
 function loadTasks() {
   const storedTasks = localStorage.getItem('tasks');
   if (storedTasks) {
@@ -21,7 +21,7 @@ function loadTasks() {
   }
 }
 
-// رسم المهام على الشاشة
+// Render tasks on the screen
 function renderTasks() {
   taskList.innerHTML = '';
   tasks.forEach(task => {
@@ -33,7 +33,7 @@ function renderTasks() {
     span.textContent = task.text;
 
     const completeBtn = document.createElement('button');
-    completeBtn.textContent = 'تم';
+    completeBtn.textContent = "complete";
     completeBtn.className = 'complete-btn';
     completeBtn.onclick = () => toggleTask(task.id);
 
@@ -50,7 +50,7 @@ function renderTasks() {
   });
 }
 
-// إضافة مهمة جديدة
+// Add a new task
 function addTask(text) {
   const newTask = {
     id: Date.now(),
@@ -62,7 +62,7 @@ function addTask(text) {
   renderTasks();
 }
 
-// تبديل حالة المهمة (مكتملة / غير مكتملة)
+// Toggle task status (completed / not completed)
 function toggleTask(id) {
   tasks = tasks.map(task =>
     task.id === id ? { ...task, completed: !task.completed } : task
@@ -71,14 +71,14 @@ function toggleTask(id) {
   renderTasks();
 }
 
-// حذف مهمة
+// Remove a task
 function removeTask(id) {
   tasks = tasks.filter(task => task.id !== id);
   saveTasks();
   renderTasks();
 }
 
-// التعامل مع زر الإضافة
+// Handle add button click
 addButton.addEventListener('click', () => {
   const value = taskInput.value.trim();
   if (value === '') {
@@ -92,7 +92,7 @@ addButton.addEventListener('click', () => {
   taskInput.value = '';
 });
 
-// إخفاء رسالة الخطأ لما المستخدم يكتب
+// Hide error message when user starts typing
 taskInput.addEventListener('input', () => {
   if (taskInput.value.trim() !== '') {
     errorMsg.classList.add('hidden');
@@ -100,20 +100,20 @@ taskInput.addEventListener('input', () => {
   }
 });
 
-// تفعيل الوضع الليلي وتخزين حالته
+// Toggle dark mode and save its state
 darkToggle.addEventListener('click', () => {
   container.classList.toggle('dark-mode');
   localStorage.setItem('darkMode', container.classList.contains('dark-mode'));
 });
 
-// تحميل حالة الوضع الليلي
+// Load dark mode setting on page load
 function loadTheme() {
   if (localStorage.getItem('darkMode') === 'true') {
     container.classList.add('dark-mode');
   }
 }
 
-// تحميل البيانات عند فتح الصفحة
+// Load data when the page is loaded
 window.onload = () => {
   loadTheme();
   loadTasks();
