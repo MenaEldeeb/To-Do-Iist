@@ -5,23 +5,15 @@ const errorMsg = document.getElementById('error-msg');
 const darkToggle = document.getElementById('dark-mode-toggle');
 const container = document.getElementById('container');
 
-let tasks = [];
+// Load tasks from localStorage
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 // Save tasks to localStorage
 function saveTasks() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// Load tasks from localStorage
-function loadTasks() {
-  const storedTasks = localStorage.getItem('tasks');
-  if (storedTasks) {
-    tasks = JSON.parse(storedTasks);
-    renderTasks();
-  }
-}
-
-// Render tasks on the screen
+// Render tasks on the page
 function renderTasks() {
   taskList.innerHTML = '';
   tasks.forEach(task => {
@@ -33,7 +25,7 @@ function renderTasks() {
     span.textContent = task.text;
 
     const completeBtn = document.createElement('button');
-    completeBtn.textContent = "complete";
+    completeBtn.textContent = task.completed ? 'Undo' : 'Complete';
     completeBtn.className = 'complete-btn';
     completeBtn.onclick = () => toggleTask(task.id);
 
@@ -62,7 +54,7 @@ function addTask(text) {
   renderTasks();
 }
 
-// Toggle task status (completed / not completed)
+// Toggle task completion
 function toggleTask(id) {
   tasks = tasks.map(task =>
     task.id === id ? { ...task, completed: !task.completed } : task
@@ -78,43 +70,44 @@ function removeTask(id) {
   renderTasks();
 }
 
-// Handle add button click
+// When "Add Task" button is clicked
 addButton.addEventListener('click', () => {
   const value = taskInput.value.trim();
   if (value === '') {
     errorMsg.classList.remove('hidden');
-    errorMsg.style.display = 'block';
     return;
   }
   errorMsg.classList.add('hidden');
-  errorMsg.style.display = 'none';
   addTask(value);
   taskInput.value = '';
 });
 
-// Hide error message when user starts typing
+// Hide error message when typing
 taskInput.addEventListener('input', () => {
   if (taskInput.value.trim() !== '') {
     errorMsg.classList.add('hidden');
-    errorMsg.style.display = 'none';
   }
 });
 
-// Toggle dark mode and save its state
+// Allow adding task by pressing Enter key
+taskInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    addButton.click();
+  }
+});
+
+// Toggle dark mode
 darkToggle.addEventListener('click', () => {
   container.classList.toggle('dark-mode');
   localStorage.setItem('darkMode', container.classList.contains('dark-mode'));
 });
 
-// Load dark mode setting on page load
-function loadTheme() {
-  if (localStorage.getItem('darkMode') === 'true') {
-    container.classList.add('dark-mode');
-  }
+// Load dark mode preference on page load
+if (localStorage.getItem('darkMode') === 'true') {
+  container.classList.add('dark-mode');
 }
 
-// Load data when the page is loaded
-window.onload = () => {
-  loadTheme();
-  loadTasks();
-};
+// Render tasks on initial page load
+renderTasks();
+
+
